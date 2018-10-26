@@ -4,7 +4,7 @@ import { BoardsListComponent } from './boards-list/boards-list.component';
 import { BoardsComponent } from './boards.component';
 import { BoardDetailComponent } from './board-detail/board-detail.component';
 import { RouterModule, Routes } from '@angular/router';
-import { MatButtonModule, MatCardModule, MatTableModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatListModule, MatTableModule } from '@angular/material';
 
 const routes: Routes = [
   {
@@ -20,7 +20,7 @@ const routes: Routes = [
         component: BoardsListComponent
       },
       {
-        path: ':id/detail',
+        path: ':boardId/detail',
         component: BoardDetailComponent
       }
     ]
@@ -33,7 +33,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     MatCardModule,
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule
   ],
   declarations: [
     BoardsListComponent,

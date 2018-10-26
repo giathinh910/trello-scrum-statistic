@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
+import { interceptors } from './shared/interceptors/interceptors';
 import { AppRoutingModule } from './app-routing.module';
 import { MatToolbarModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,7 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     MatToolbarModule
   ],
-  providers: [],
+  providers: [
+    ...interceptors
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
